@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bouclier
+  m_Shader: {fileID: -6465566751694194690, guid: ff6727a51bb7ac646b8bc9f7b9c98d77, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_36a800c8f59a443dbb6fcdb2fa2044d8:
+        m_Texture: {fileID: 2800000, guid: d422493cf543c6d468efc1ab06ee141e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_90ce6e712d934f4aa57006a997f0d35f:
+        m_Texture: {fileID: 2800000, guid: 72a48d83cc1829e448eb65d7fb40b308, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_2b10b8da289e420fb727f81b62d9d058: 0.2
+    - Vector1_2d4cde4c8d9a488e83d2e0848fad4a31: 1.44
+    - Vector1_5aeb42da1ea9471498449a735941f14c: 1
+    m_Colors:
+    - Color_0520b6fdd99d4107930f255f68a28ce9: {r: 1, g: 0, b: 0.87590456, a: 1}
+    - Vector2_30c5633905ca4b7ba3cde4a3e7e687af: {r: 0, g: 1, b: 0, a: 0}
+    - Vector2_ee0b056fa29749338a5a7ec1112a88d3: {r: 0, g: 2, b: 0, a: 0}
+    - Vector2_ee0b056fa29749338a5a7ec1112a88d3_1: {r: 0, g: 0.1, b: 0, a: 0}
+  m_BuildTextureStacks: []
