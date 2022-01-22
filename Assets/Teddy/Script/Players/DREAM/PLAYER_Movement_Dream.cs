@@ -8,7 +8,7 @@ public class PLAYER_Movement_Dream : PLAYER_Movement
     
     public override void MOVEMENT_Dash()
     {
-      Debug.Log("DASH DREAM");
+//      Debug.Log("DASH DREAM");
       
       StartCoroutine(DashDream());
     }
@@ -35,7 +35,7 @@ public class PLAYER_Movement_Dream : PLAYER_Movement
             
             yield return new WaitForSeconds(Time.deltaTime);
         }
-        Debug.Log("DashFinished");
+//        Debug.Log("DashFinished");
         pr_inDash = false;
     }
 }

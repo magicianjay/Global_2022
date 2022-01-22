@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PLAYER_Base : MonoBehaviour
@@ -6,7 +7,17 @@ public class PLAYER_Base : MonoBehaviour
     [SerializeField]private PLAYER_Movement _myPlayerMovement;
     [SerializeField]private PLAYER_Weapon _myPlayerWeapon;
     [SerializeField]private PLAYER_Body _myPlayerBody;
-    
+
+    public PLAYER_Movement PLAYER_MOVEMENT => _myPlayerMovement;
+    public PLAYER_Weapon PLAYER_WEAPON => _myPlayerWeapon;
+    public PLAYER_Body PLAYER_BODY => _myPlayerBody;
+
+    private void Awake()
+    {
+        _myPlayerBody.Initialize();
+        _myPlayerWeapon.Initialize();
+    }
+
     public virtual void Update()
     {
         if (Input.GetAxis($"PLAYER{_idxPlayer}_HorizontalAxis_LeftStick") != 0)
@@ -19,7 +30,7 @@ public class PLAYER_Base : MonoBehaviour
             LookAt($"PLAYER{_idxPlayer}_HorizontalAxis_RightStick",$"PLAYER{_idxPlayer}_VerticalAxis_RightStick");
         }
 
-        if (Input.GetButtonDown($"PLAYER{_idxPlayer}_PrimaryAttack"))
+        if (Input.GetButton($"PLAYER{_idxPlayer}_PrimaryAttack"))
         {
             _myPlayerWeapon.WEAPON_PrimaryAttack();
         }
