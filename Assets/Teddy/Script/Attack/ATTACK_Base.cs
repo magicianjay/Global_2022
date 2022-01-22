@@ -6,8 +6,9 @@ using UnityEngine;
 public abstract class ATTACK_Base : MonoBehaviour
 {
     [Header("ATTACK BASE")]
-    [SerializeField] protected GameObject pr_ownerAttack;
-    [SerializeField] protected float pr_timeDuration = 0;
+     protected GameObject pr_ownerAttack;
+     protected float pr_timeDuration = 0;
+     protected float pr_attackDamage = 0;
 
     protected BASE_Weapon _baseWeaponOwner;
 
@@ -20,10 +21,11 @@ public abstract class ATTACK_Base : MonoBehaviour
     public enum TypeAttack{Distance, Cac}
     protected TypeAttack pr_typeAttack;
     
-    public virtual void Initialize(GameObject ownerAttack,float durationAttack)
+    public virtual void Initialize(GameObject ownerAttack,float durationAttack, float attackDamage)
     {
         pr_ownerAttack = ownerAttack;
-
+        pr_attackDamage = attackDamage;
+        
         Collider2D attackCollider = this.GetComponent<Collider2D>();
         Collider2D ownerCollider = ownerAttack.GetComponent<Collider2D>();
         
@@ -37,9 +39,36 @@ public abstract class ATTACK_Base : MonoBehaviour
         if(pr_timeDuration > 0){StartCoroutine(ATTACK_DurationDestroy());}
     }
 
-    public virtual void Initialize(GameObject ownerAttack, float durationAttack,float speed, int piercingNumber)
+    public virtual void Initialize(GameObject ownerAttack, float durationAttack,float attackDamage,float speed, int piercingNumber)
     {
         pr_ownerAttack = ownerAttack.transform.parent.gameObject;
+        pr_timeDuration = durationAttack;
+        pr_attackDamage = attackDamage;
+        
+        Collider2D attackCollider = this.GetComponent<Collider2D>();
+        Collider2D ownerCollider = ownerAttack.GetComponent<Collider2D>();
+        
+        if (attackCollider != null && ownerCollider != null)
+        {
+            Physics2D.IgnoreCollision(attackCollider,ownerCollider);
+        }
+        
+        if(pr_timeDuration > 0){StartCoroutine(ATTACK_DurationDestroy());}
+    }
+
+    public virtual void Initialize(GameObject ownerAttack, float durationAttack, float attackDamage, float radiusAttack)
+    {
+        pr_ownerAttack = ownerAttack;
+        pr_attackDamage = attackDamage;
+        
+        Collider2D attackCollider = this.GetComponent<Collider2D>();
+        Collider2D ownerCollider = ownerAttack.GetComponent<Collider2D>();
+        
+        if (attackCollider != null && ownerCollider != null)
+        {
+            Physics2D.IgnoreCollision(attackCollider,ownerCollider);
+        }
+        
         pr_timeDuration = durationAttack;
 
         if(pr_timeDuration > 0){StartCoroutine(ATTACK_DurationDestroy());}

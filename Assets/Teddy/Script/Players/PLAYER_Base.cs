@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PLAYER_Base : MonoBehaviour
 {
-    [SerializeField]private int _idxPlayer = 0;
+    public int _idxPlayer = 0;
     [SerializeField]private PLAYER_Movement _myPlayerMovement;
     [SerializeField]private PLAYER_Weapon _myPlayerWeapon;
     [SerializeField]private PLAYER_Body _myPlayerBody;
@@ -15,7 +15,14 @@ public class PLAYER_Base : MonoBehaviour
     private void Awake()
     {
         _myPlayerBody.Initialize();
-        _myPlayerWeapon.Initialize();
+        _myPlayerWeapon.Initialize(this);
+    }
+
+    private void Start()
+    {
+        if (_idxPlayer == 1) { CAMERA_Players.Instance._player1 = transform; }
+        else if (_idxPlayer == 2) { CAMERA_Players.Instance._player2 = transform; }
+
     }
 
     public virtual void Update()
@@ -51,8 +58,8 @@ public class PLAYER_Base : MonoBehaviour
    
     private void LookAt(string _horizontalAxis, string _verticalAxis )
     {
-        float horizontalAxis = Input.GetAxis(_horizontalAxis) > 0.1f || Input.GetAxis(_horizontalAxis) < 0.1f? Input.GetAxis(_horizontalAxis):0;
-        float verticalAxis = -Input.GetAxis(_verticalAxis) > 0.1f || -Input.GetAxis(_verticalAxis) < 0.1f ? -Input.GetAxis(_verticalAxis):0;
+        float horizontalAxis = Input.GetAxis(_horizontalAxis);
+        float verticalAxis = -Input.GetAxis(_verticalAxis) ;
         
         Vector3 direction = new Vector3(horizontalAxis,verticalAxis  ,90);
     

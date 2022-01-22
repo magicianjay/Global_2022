@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ATTACK_CAC : ATTACK_Base
+public class ATTACK_AOE : ATTACK_Base
 {
-    public override void Initialize(GameObject ownerAttack, float durationAttack, float attackDamage)
+    protected float pr_radiusAttack = 3;
+    
+    public override void Initialize(GameObject ownerAttack, float durationAttack, float attackDamage,float radiusAttack)
     {
         base.Initialize(ownerAttack, durationAttack, attackDamage);
         pr_typeAttack = TypeAttack.Cac;
+        pr_radiusAttack = radiusAttack;
+        transform.localScale = new Vector3(pr_radiusAttack,pr_radiusAttack,pr_radiusAttack);
     }
-
+    
     protected override void ATTACK_Collision(Collision2D other)
     {
         if (!other.gameObject.Equals(pr_ownerAttack))
@@ -26,7 +30,7 @@ public class ATTACK_CAC : ATTACK_Base
             }
             else if (other.gameObject.TryGetComponent<ARENA_Inhibitor>(out ARENA_Inhibitor _arenaInhibitor))
             {
-                
+                _arenaInhibitor.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner,pr_attackDamage);
             }
         }
         else
@@ -51,7 +55,7 @@ public class ATTACK_CAC : ATTACK_Base
             }
             else if (collider2D.gameObject.TryGetComponent<ARENA_Inhibitor>(out ARENA_Inhibitor _arenaInhibitor))
             {
-                _arenaInhibitor.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner,pr_attackDamage);
+                
             }
         }
         else

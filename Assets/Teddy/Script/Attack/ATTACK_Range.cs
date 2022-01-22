@@ -8,10 +8,10 @@ public class ATTACK_Range : ATTACK_Base
     [SerializeField] protected int pr_piercingNumber;
     protected int _piercedEntity = 0;
     [SerializeField] protected float pr_speed;
-    
-    public override void Initialize(GameObject ownerAttack, float durationAttack,float speed, int piercingNumber)
+
+    public override void Initialize(GameObject ownerAttack, float durationAttack,float attackDamage,float speed, int piercingNumber)
     {
-        base.Initialize(ownerAttack, durationAttack);
+        base.Initialize(ownerAttack, durationAttack,attackDamage);
         pr_typeAttack = TypeAttack.Distance;
         pr_piercingNumber = piercingNumber;
         pr_speed = speed;
@@ -27,11 +27,15 @@ public class ATTACK_Range : ATTACK_Base
             if (other.gameObject.TryGetComponent<PLAYER_Base>( out PLAYER_Base _playerBase))
             {
                 Debug.Log("COLLIDE OTHER PLAYER");
-                _playerBase.PLAYER_BODY.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner);
+                _playerBase.PLAYER_BODY.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner,pr_attackDamage);
             }
             else if (other.gameObject.TryGetComponent<ENEMY_Base>( out ENEMY_Base _enemyBase))
             {
-                _enemyBase.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner);
+                _enemyBase.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner,pr_attackDamage);
+            }
+            else if (other.gameObject.TryGetComponent<ARENA_Inhibitor>(out ARENA_Inhibitor _arenaInhibitor))
+            {
+                
             }
 
             _piercedEntity++;
@@ -56,11 +60,15 @@ public class ATTACK_Range : ATTACK_Base
             if (collider2Dr.gameObject.TryGetComponent<PLAYER_Base>( out PLAYER_Base _playerBase))
             {
                 Debug.Log("COLLIDE OTHER PLAYER");
-                _playerBase.PLAYER_BODY.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner);
+                _playerBase.PLAYER_BODY.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner,pr_attackDamage);
             }
             else if (collider2Dr.gameObject.TryGetComponent<ENEMY_Base>( out ENEMY_Base _enemyBase))
             {
-                _enemyBase.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner);
+                _enemyBase.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner,pr_attackDamage);
+            }
+            else if (collider2Dr.gameObject.TryGetComponent<ARENA_Inhibitor>(out ARENA_Inhibitor _arenaInhibitor))
+            {
+                _arenaInhibitor.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner,pr_attackDamage);
             }
 
             _piercedEntity++;

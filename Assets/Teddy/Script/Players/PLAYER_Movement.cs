@@ -8,6 +8,17 @@ public abstract class PLAYER_Movement : MonoBehaviour
     [SerializeField] protected float pr_Speed = 10f;
     [SerializeField] protected float pr_dashPower = 5f;
     protected bool pr_inDash = false;
+
+    public bool INDASH {
+        get
+        {
+            return pr_inDash;
+        }
+        set
+        {
+            pr_inDash = value;
+        }
+}
     
     public virtual void Movement_Move(string XAxis,string YAxis)
     {
