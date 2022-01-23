@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4982347729016235030}
   - component: {fileID: 4982347729016235039}
   - component: {fileID: 4982347729016235033}
-  - component: {fileID: 4982347729016235032}
+  - component: {fileID: 2084589061070124014}
   m_Layer: 0
   m_Name: Zerg
   m_TagString: Untagged
@@ -186,7 +186,7 @@ MonoBehaviour:
   _myEnemyWeapon: {fileID: 4982347729016235033}
   pr_vitality: 3
   pr_movementBehaviour: {fileID: 4982347729016235039}
-  pr_targetBehaviour: {fileID: 4982347729016235032}
+  pr_targetBehaviour: {fileID: 2084589061070124014}
 --- !u!61 &4982347729016235029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -261,11 +261,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeOwner: 1
   pr_damage: 1
-  pr_fireRate: 1
+  pr_fireRate: 0.5
   pr_rangeAttack: 2
   p_slash: {fileID: 1046320588228016726, guid: 81e27a64230ddfb4d8f3666b044e4695, type: 3}
   p_slashDuration: 0.2
---- !u!114 &4982347729016235032
+--- !u!114 &2084589061070124014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4982347729016235031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eec109dd484b854fb299ee272a50a16, type: 3}
+  m_Script: {fileID: 11500000, guid: 3245069e78d456d4c8a656ffc928a068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pr_tTarget: {fileID: 0}

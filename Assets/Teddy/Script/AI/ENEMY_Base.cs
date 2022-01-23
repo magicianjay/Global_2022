@@ -42,8 +42,12 @@ public class ENEMY_Base : MonoBehaviour
     public void Initialize()
     {
         p_vitalityBase = pr_vitality;
-        _myEnemyWeapon.Initialize(this);
+        pr_targetBehaviour = GetComponent<ENEMY_TargetBehaviour>();
+        _myEnemyWeapon = GetComponent<ENEMY_Weapon>();
+        pr_movementBehaviour = GetComponent<ENEMY_MovementBehavior>();
+        
         TARGETBEHAVIOUR.Initialize();
+        _myEnemyWeapon.Initialize(this);
         MOVEMENTBEHAVIOUR.Initialize(this);
     }
 

@@ -7,11 +7,13 @@ public class ARENA_Base : MonoBehaviour
 {
     public delegate void ARENA_Start();
     public static event ARENA_Start OnStartArena;
+
+
     
-    public delegate void ARENA_NewWave();
-    public static event ARENA_NewWave OnNewWave;
-    
-    
+    public void StartGame()
+    {
+        OnStartArena.Invoke();
+    }
 
     private void OnEnable()
     {

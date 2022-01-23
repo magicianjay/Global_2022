@@ -9,14 +9,18 @@ public abstract class ENEMY_Weapon : BASE_Weapon
     protected ENEMY_Base pr_enemyBase;
     protected bool p_needReload;
 
+    private bool _initialized = false;
     private void Update()
     {
-        WEAPON_LookAt();
-        float distance = WEAPON_CalculateDistanceBetweenTargetAndAI();
-
-        if (pr_rangeAttack > distance)
+        if (_initialized)
         {
-            WEAPON_PrimaryAttack();
+            WEAPON_LookAt();
+            float distance = WEAPON_CalculateDistanceBetweenTargetAndAI();
+
+            if (pr_rangeAttack > distance)
+            {
+                WEAPON_PrimaryAttack();
+            }
         }
     }
 
@@ -24,6 +28,7 @@ public abstract class ENEMY_Weapon : BASE_Weapon
     {
         _typeOwner = TypeOwner.Enemy;
         pr_enemyBase = enemyBase;
+        _initialized = true;
     }
     
     public abstract void WEAPON_PrimaryAttack();
