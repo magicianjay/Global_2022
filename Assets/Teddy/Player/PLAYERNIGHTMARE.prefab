@@ -181,13 +181,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3556856161996226793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 215739468de63a9459b2ba8e904740bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 48d34a791cce9a64298b929d3c465d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idxPlayer: 0
-  _myPlayerMovement: {fileID: 3556856161996226772}
+  _idxPlayer: 1
+  _myPlayerMovement: {fileID: 3556856161996226794}
   _myPlayerWeapon: {fileID: 3556856162230167817}
-  _myPlayerBody: {fileID: 3556856161996226794}
+  _myPlayerBody: {fileID: 3556856161996226772}
 --- !u!114 &3556856161996226772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,11 +197,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3556856161996226793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbdf3fd43b2eaaf4eae15bd5f450fe04, type: 3}
+  m_Script: {fileID: 11500000, guid: e37a9e20797fcb44faf82320a8c67555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pr_Speed: 10
-  pr_dashPower: 5
+  pr_vitality: 100
+  pr_stamina: 100
 --- !u!61 &3556856161996226769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -258,11 +258,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3556856161996226793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a62f778c5db3b44af885ced05b033a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f2a2f804d1f3b74cbe75df68fbd1581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pr_vitality: 100
-  pr_stamina: 100
+  pr_Speed: 10
+  pr_dashPower: 5
 --- !u!114 &3556856161996226795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3556856161996226793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 066991a841abdca4a872dc8d0e0fcb8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 05166d5d65427ac4fa3c63b1fdad0888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3556856162230167823
@@ -315,19 +315,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3556856162230167823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb0a2139ee772a48a6f99a5d713b892, type: 3}
+  m_Script: {fileID: 11500000, guid: a99b15059b80a8b4f83254bfaa74ed64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOwner: 0
-  pr_damage: 100
-  pr_fireRate: 100
+  pr_damage: 1
+  pr_fireRate: 3
   pr_ultimeLoadPerKill: 5
-  p_projectile: {fileID: 1189795959373907860, guid: 29fb748a3b3b5f54192010f374ecb608, type: 3}
+  p_projectile: {fileID: 1189795959373907860, guid: 1626b17a033b21942973d1d9efa97653, type: 3}
   p_projectileDuration: 0.5
   p_projectileSpeed: 5
-  pr_secondaryAttack_PrefabAOE: {fileID: 8385080305014750624, guid: 964d4fc088d1797418144a5388664989, type: 3}
+  pr_secondaryAttack_PrefabAOE: {fileID: 8385080305014750624, guid: 14a378c6beefc794a801dcc78d642ccd, type: 3}
   pr_secondaryAttack_Cooldown: 3
   pr_secondaryAttack_maxLoadingTime: 3
   p_secondaryAttack_RadiusAttack: 5
   p_secondaryAttack_AttackDamage: 5
-  p_secondaryAttack_AOEDuration: 5
+  p_secondaryAttack_AOEDuration: 2

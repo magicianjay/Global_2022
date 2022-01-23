@@ -40,14 +40,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4048217848728489248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18de66928b0e52a46aed0361ce14f83e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cd613dfe3c6d764aac44a03262ae13f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOwner: 0
-  pr_damage: 100
-  pr_fireRate: 100
+  pr_damage: 1
+  pr_fireRate: 5
   pr_ultimeLoadPerKill: 5
-  p_slash: {fileID: 1046320588228016726, guid: 224d0f224b720e74aa70dbb1589ea451, type: 3}
+  p_slash: {fileID: 1046320588228016726, guid: 81e27a64230ddfb4d8f3666b044e4695, type: 3}
   p_slashDuration: 0.5
   pr_cooldownSecondaryAttack: 3
   pr_maxLoadingTime: 3
@@ -146,9 +146,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4048217848968505851}
   - component: {fileID: 4048217848968505852}
+  - component: {fileID: 4048217848968505854}
   - component: {fileID: 4048217848968505853}
   - component: {fileID: 4048217848968505849}
-  - component: {fileID: 4048217848968505854}
   - component: {fileID: 4048217848968505831}
   - component: {fileID: 4048217848968505848}
   - component: {fileID: 4048217848968505850}
@@ -226,37 +226,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4048217848968505853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4048217848968505855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 215739468de63a9459b2ba8e904740bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _idxPlayer: 0
-  _myPlayerMovement: {fileID: 4048217848968505849}
-  _myPlayerWeapon: {fileID: 4048217848728489262}
-  _myPlayerBody: {fileID: 4048217848968505854}
---- !u!114 &4048217848968505849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4048217848968505855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bced036ca005da4abc776334b97a4bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pr_Speed: 10
-  pr_dashPower: 5
-  _TimeDash: 0
 --- !u!114 &4048217848968505854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,11 +235,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 4048217848968505855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70feb0d8debd3974d9e48506a4db305f, type: 3}
+  m_Script: {fileID: 11500000, guid: 48d34a791cce9a64298b929d3c465d4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _idxPlayer: 2
+  _myPlayerMovement: {fileID: 4048217848968505849}
+  _myPlayerWeapon: {fileID: 4048217848728489262}
+  _myPlayerBody: {fileID: 4048217848968505853}
+--- !u!114 &4048217848968505853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048217848968505855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148dad0ae6ca7ba47a965292bb78530b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pr_vitality: 100
   pr_stamina: 100
+--- !u!114 &4048217848968505849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048217848968505855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacc660b21fcbd9418c2c2dbdac3fcf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pr_Speed: 10
+  pr_dashPower: 5
+  _TimeDash: 0.2
 --- !u!61 &4048217848968505831
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -327,6 +327,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4048217848968505855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 066991a841abdca4a872dc8d0e0fcb8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 05166d5d65427ac4fa3c63b1fdad0888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
