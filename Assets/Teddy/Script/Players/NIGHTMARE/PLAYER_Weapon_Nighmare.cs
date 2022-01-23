@@ -46,7 +46,7 @@ public class PLAYER_Weapon_Nighmare : PLAYER_Weapon
 
     public override void WEAPON_SecondaryAttack()
     {
-        Debug.Log("SECONDARY ATTACK NIGHTMARE");
+//        Debug.Log("SECONDARY ATTACK NIGHTMARE");
 
         StartCoroutine(NIGHTMARE_SecondaryAttack());
     }
@@ -80,6 +80,6 @@ public class PLAYER_Weapon_Nighmare : PLAYER_Weapon
     
     public override void WEAPON_UltimeAttack()
     {
-        Debug.Log("ULTIME ATTACK NIGHTMARE");
+        //Debug.Log("ULTIME ATTACK NIGHTMARE");
     }
 }

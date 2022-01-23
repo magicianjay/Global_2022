@@ -10,6 +10,7 @@ public class ARENA_Base : MonoBehaviour
 
 
     
+    
     public void StartGame()
     {
         OnStartArena.Invoke();

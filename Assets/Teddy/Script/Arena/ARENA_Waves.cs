@@ -30,6 +30,16 @@ public class ARENA_Waves : MonoBehaviour
     Instance = this;
   }
 
+  private void Start()
+  {
+    Initialize();
+  }
+
+  public void Initialize()
+  {
+    UI_IG.Instance.InitializeWave(0,actualWaves);
+  }
+  
   private void OnEnable()
   {
     ENEMY_Base.OnEnemyKilled += EnemyKill;
@@ -61,9 +71,13 @@ public class ARENA_Waves : MonoBehaviour
     yield return new WaitForSeconds(_newWaveTimer);
     NewWave();
   }
+  
   private void NewWave()
   {
     OnNewWave?.Invoke();
+    actualWaves++;
+    //Debug.Log("NewWave : "+actualWaves);
+    
     numberOfEnnemiesInWave = 0;
     actualGroup = 0;
     
@@ -71,6 +85,10 @@ public class ARENA_Waves : MonoBehaviour
     {
       numberOfEnnemiesInWave += VARIABLE.waveEnemies.Count;
     }
+
+    UI_IG.Instance.SetWaveUI(0,actualWaves);
+    
+    StartCoroutine(SpawningWaveGroup());
   }
   private void StartArenaWave()
   {
@@ -93,7 +111,7 @@ public class ARENA_Waves : MonoBehaviour
     
     for (int i = 0; i < maxGroup; i++)
     {
-      Debug.Log("SPAWN A GROUP");
+      //Debug.Log("SPAWN A GROUP");
       GameObject chosenSpawner = FindRandomSpawner();
       StartCoroutine(SpawningGroup(actualGroup,chosenSpawner));
       actualGroup++;
@@ -108,7 +126,7 @@ public class ARENA_Waves : MonoBehaviour
     
     for (int i = 0; i < unitSpawnMax; i++)
     {
-      Debug.Log("SPAWN A UNIT");
+//      Debug.Log("SPAWN A UNIT");
       Instantiate(waves[actualWaves].waveGroups[_actualGroup].waveEnemies[i],spawner.transform.position,quaternion.identity );
       unitSpawn++;
       yield return new WaitForSeconds(timeSpawnPerUnit);

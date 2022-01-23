@@ -61,20 +61,20 @@ public class ENEMY_Base : MonoBehaviour
 
     protected virtual void Death()
     {
-        if (transform.parent != null) { Destroy(transform.parent.gameObject);}
-        else { Destroy(gameObject); }
+        if (transform.parent != null) {OnEnemyKilled?.Invoke(); Destroy(transform.parent.gameObject);}
+        else { OnEnemyKilled?.Invoke();Destroy(gameObject); }
     }
     
     public virtual void CollisionWithAttack(GameObject ownerAttack,BASE_Weapon baseWeapon, float attackDamage)
     {
-        Debug.Log("ENEMY : I AM ATTACKED");
-        Debug.Log(baseWeapon._typeOwner);
+  //      Debug.Log("ENEMY : I AM ATTACKED");
+//        Debug.Log(baseWeapon._typeOwner);
         
         if (baseWeapon._typeOwner == BASE_Weapon.TypeOwner.Player)
         {
             PLAYER_Weapon  playerWeapon = baseWeapon.GetComponent<PLAYER_Weapon>();
             VITALITY -= attackDamage;
-            Debug.Log("UN PLAYER M'ATTAQUE : "+playerWeapon.WEAPON_DAMAGE);
+      //      Debug.Log("UN PLAYER M'ATTAQUE : "+playerWeapon.WEAPON_DAMAGE);
         }
     }
     

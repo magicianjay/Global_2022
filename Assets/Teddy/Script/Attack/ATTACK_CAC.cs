@@ -14,10 +14,10 @@ public class ATTACK_CAC : ATTACK_Base
     {
         if (!other.gameObject.Equals(pr_ownerAttack))
         {
-            Debug.Log("COLLIDE NOT MY OWNER");
+         //   Debug.Log("COLLIDE NOT MY OWNER");
             if (other.gameObject.TryGetComponent<PLAYER_Base>( out PLAYER_Base _playerBase))
             {
-                Debug.Log("COLLIDE OTHER PLAYER");
+              //  Debug.Log("COLLIDE OTHER PLAYER");
                 _playerBase.PLAYER_BODY.CollisionWithAttack(pr_ownerAttack, _baseWeaponOwner,pr_attackDamage);
             }
             else if (other.gameObject.TryGetComponent<ENEMY_Base>( out ENEMY_Base _enemyBase))
@@ -31,7 +31,7 @@ public class ATTACK_CAC : ATTACK_Base
         }
         else
         {
-            Debug.Log("COLLIDE MY OWNER");
+           // Debug.Log("COLLIDE MY OWNER");
         }
     }
     
@@ -39,10 +39,10 @@ public class ATTACK_CAC : ATTACK_Base
     {
         if (!collider2D.gameObject.Equals(pr_ownerAttack))
         {
-            Debug.Log("COLLIDE NOT MY OWNER");
+       //     Debug.Log("COLLIDE NOT MY OWNER");
             if (collider2D.gameObject.TryGetComponent<PLAYER_Base>( out PLAYER_Base _playerBase))
             {
-                Debug.Log("COLLIDE OTHER PLAYER");
+//                Debug.Log("COLLIDE OTHER PLAYER");
                 _playerBase.PLAYER_BODY.CollisionWithAttack(pr_ownerAttack,_baseWeaponOwner,pr_attackDamage);
             }
             else if (collider2D.gameObject.TryGetComponent<ENEMY_Base>( out ENEMY_Base _enemyBase))

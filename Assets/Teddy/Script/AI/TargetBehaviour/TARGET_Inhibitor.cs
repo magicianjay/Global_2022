@@ -7,7 +7,7 @@ public class TARGET_Inhibitor : ENEMY_TargetBehaviour
  
  protected override void ENEMY_FOUNDTARGET()
  {
-  Debug.Log("SEARCH TARGET");
+  //Debug.Log("SEARCH TARGET");
 
   ARENA_Inhibitor[] allInhibitors = FindObjectsOfType<ARENA_Inhibitor>();
 
@@ -29,7 +29,7 @@ public class TARGET_Inhibitor : ENEMY_TargetBehaviour
   {
    pr_tTarget = closedInhibitor.GetComponent<ENEMY_Target>();
    pr_tTarget.OnTargetDestoy += TARGET_Destroyed;
-   Debug.Log("FIND TARGET : "+pr_tTarget,pr_tTarget);
+//   Debug.Log("FIND TARGET : "+pr_tTarget,pr_tTarget);
   }
   else
   {

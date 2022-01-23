@@ -37,4 +37,19 @@ public abstract class PLAYER_Movement : MonoBehaviour
 
 
     public abstract void MOVEMENT_Dash();
+
+    public void Movement_Lookat(string _horizontalAxis, string _verticalAxis)
+    {
+        float horizontalAxis = Input.GetAxis(_horizontalAxis);
+        float verticalAxis = -Input.GetAxis(_verticalAxis);
+        
+        Vector3 direction = new Vector3(horizontalAxis,verticalAxis  ,90);
+        
+        Vector3 rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * direction;
+        
+        Quaternion targetRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorToTarget);
+        
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.deltaTime);
+        
+    }
 }
