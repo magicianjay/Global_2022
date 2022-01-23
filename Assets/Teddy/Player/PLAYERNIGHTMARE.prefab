@@ -423,12 +423,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOwner: 0
-  pr_damage: 100
-  pr_fireRate: 100
+  pr_damage: 1
+  pr_fireRate: 5
   pr_ultimeLoadPerKill: 5
   p_projectile: {fileID: 1189795959373907860, guid: 29fb748a3b3b5f54192010f374ecb608, type: 3}
   p_projectileDuration: 0.5
-  p_projectileSpeed: 5
+  p_projectileSpeed: 20
   pr_secondaryAttack_PrefabAOE: {fileID: 8385080305014750624, guid: 964d4fc088d1797418144a5388664989, type: 3}
   pr_secondaryAttack_Cooldown: 3
   pr_secondaryAttack_maxLoadingTime: 3

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2869782925378597320}
   - component: {fileID: 3727577287183909409}
   - component: {fileID: 2382206556343811037}
-  - component: {fileID: 5144032684968013346}
+  - component: {fileID: 3385291005209182887}
   m_Layer: 0
   m_Name: AOENIGHTMARE
   m_TagString: Untagged
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5144032684968013346
+--- !u!114 &3385291005209182887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,6 +109,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8385080305014750624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b904abdeeb7f934998596c88c2541ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ad1be60bf4319c4b9e6c531db8c75ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

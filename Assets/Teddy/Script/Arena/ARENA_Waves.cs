@@ -92,6 +92,13 @@ public class ARENA_Waves : MonoBehaviour
   }
   private void StartArenaWave()
   {
+    StartCoroutine(Wait());
+    
+  }
+
+  private IEnumerator Wait()
+  {
+    yield return new WaitForSeconds(10);
     numberOfEnnemiesInWave = 0;
     actualWaves = 0;
     actualGroup = 0;
@@ -103,8 +110,6 @@ public class ARENA_Waves : MonoBehaviour
 
     StartCoroutine(SpawningWaveGroup());
   }
-
-
   private IEnumerator SpawningWaveGroup()
   {
     int maxGroup = waves[actualWaves].waveGroups.Count;

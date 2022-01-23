@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOwner: 0
-  pr_damage: 100
-  pr_fireRate: 100
+  pr_damage: 1
+  pr_fireRate: 2
   pr_ultimeLoadPerKill: 5
   p_slash: {fileID: 1046320588228016726, guid: 224d0f224b720e74aa70dbb1589ea451, type: 3}
   p_slashDuration: 0.5
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pr_Speed: 10
   pr_dashPower: 5
-  _TimeDash: 0
+  _TimeDash: 0.2
 --- !u!61 &4048217848968505831
 BoxCollider2D:
   m_ObjectHideFlags: 0

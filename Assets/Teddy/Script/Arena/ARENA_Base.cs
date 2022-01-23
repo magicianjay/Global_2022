@@ -9,8 +9,11 @@ public class ARENA_Base : MonoBehaviour
     public static event ARENA_Start OnStartArena;
 
 
-    
-    
+    private void Start()
+    {
+        StartGame();
+    }
+
     public void StartGame()
     {
         OnStartArena.Invoke();

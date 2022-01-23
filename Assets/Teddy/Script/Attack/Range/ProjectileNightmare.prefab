@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589b42a8d5b2fbc4ab87ce0786eafa8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pr_piercingNumber: 0
-  pr_speed: 0
+  pr_piercingNumber: 2
+  pr_speed: 20
 --- !u!70 &7495491935251370589
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

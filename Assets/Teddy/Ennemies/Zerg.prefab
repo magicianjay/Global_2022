@@ -92,12 +92,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4982347729016235034}
   - component: {fileID: 4982347729016235035}
-  - component: {fileID: 4982347729016235028}
   - component: {fileID: 4982347729016235029}
   - component: {fileID: 4982347729016235030}
-  - component: {fileID: 4982347729016235039}
-  - component: {fileID: 4982347729016235033}
-  - component: {fileID: 2084589061070124014}
+  - component: {fileID: 8367223672004375040}
+  - component: {fileID: 5327695563670738527}
+  - component: {fileID: 5679211027910260991}
+  - component: {fileID: 2665423582353809486}
   m_Layer: 0
   m_Name: Zerg
   m_TagString: Untagged
@@ -171,22 +171,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4982347729016235028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982347729016235031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f40c718730ba5ca42ab4afe0e513bf62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _myEnemyWeapon: {fileID: 4982347729016235033}
-  pr_vitality: 3
-  pr_movementBehaviour: {fileID: 4982347729016235039}
-  pr_targetBehaviour: {fileID: 2084589061070124014}
 --- !u!61 &4982347729016235029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -234,7 +218,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4982347729016235039
+--- !u!114 &8367223672004375040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,11 +227,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4982347729016235031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf2d5f668c3be3478476171b51fa13e, type: 3}
+  m_Script: {fileID: 11500000, guid: 19a2f32cc926b9540b7feb448bceecdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pr_speed: 10
---- !u!114 &4982347729016235033
+  _myEnemyWeapon: {fileID: 2665423582353809486}
+  pr_vitality: 1
+  pr_movementBehaviour: {fileID: 5327695563670738527}
+  pr_targetBehaviour: {fileID: 5679211027910260991}
+--- !u!114 &5327695563670738527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,25 +243,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 4982347729016235031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76291fc98d5f8b498892387ff9d5046, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e056ce0af8a4cd49a7ff9548aa5d05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pr_speed: 5
+--- !u!114 &5679211027910260991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982347729016235031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce085cce5bfbdf45bcab15ef948fda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pr_tTarget: {fileID: 0}
+--- !u!114 &2665423582353809486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982347729016235031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd7759ccb33bab4597d9ebd52e3a27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOwner: 1
   pr_damage: 1
   pr_fireRate: 0.5
   pr_rangeAttack: 2
-  p_slash: {fileID: 1046320588228016726, guid: 81e27a64230ddfb4d8f3666b044e4695, type: 3}
-  p_slashDuration: 0.2
---- !u!114 &2084589061070124014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982347729016235031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245069e78d456d4c8a656ffc928a068, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pr_tTarget: {fileID: 0}
+  p_slash: {fileID: 1046320588228016726, guid: 224d0f224b720e74aa70dbb1589ea451, type: 3}
+  p_slashDuration: 0.1
