@@ -7,6 +7,8 @@ public abstract class ENEMY_TargetBehaviour : MonoBehaviour
 {
     [SerializeField]protected ENEMY_Target pr_tTarget;
 
+    public ENEMY_Target TARGET => pr_tTarget;
+    
     public virtual void Initialize()
     {
         ENEMY_FOUNDTARGET();

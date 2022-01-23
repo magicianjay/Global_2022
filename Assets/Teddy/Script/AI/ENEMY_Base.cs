@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class ENEMY_Base : MonoBehaviour
 {
+    public delegate void ENEMY_Killed();
+    public static event ENEMY_Killed OnEnemyKilled;
+    
+    
     [SerializeField]private ENEMY_Weapon _myEnemyWeapon;
     public ENEMY_Weapon ENEMY_WEAPON => _myEnemyWeapon;
     
     [SerializeField] protected float pr_vitality = 100;
 
     [SerializeField] protected ENEMY_MovementBehavior pr_movementBehaviour;
-    [SerializeField] protected ENEMY_AttackBehaviour pr_attackBehaviour;
     [SerializeField] protected ENEMY_TargetBehaviour pr_targetBehaviour;
 
     public ENEMY_MovementBehavior MOVEMENTBEHAVIOUR =>pr_movementBehaviour;
-    public ENEMY_AttackBehaviour ATTACKBEHAVIOUR =>pr_attackBehaviour;
     public ENEMY_TargetBehaviour TARGETBEHAVIOUR =>pr_targetBehaviour;
     
     public float VITALITY
@@ -35,15 +37,14 @@ public class ENEMY_Base : MonoBehaviour
     private void Awake()
     {
         Initialize();
-        _myEnemyWeapon.Initialize();
     }
 
     public void Initialize()
     {
         p_vitalityBase = pr_vitality;
+        _myEnemyWeapon.Initialize(this);
         TARGETBEHAVIOUR.Initialize();
-        MOVEMENTBEHAVIOUR.Initialize();
-        ATTACKBEHAVIOUR.Initialize();
+        MOVEMENTBEHAVIOUR.Initialize(this);
     }
 
     private void VerifiyHP()

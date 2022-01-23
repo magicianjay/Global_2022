@@ -57,8 +57,8 @@ public class PLAYER_Weapon_Dream : PLAYER_Weapon
             {
                 timeLeft += Time.deltaTime;
                 percent = timeLeft / pr_maxLoadingTime;
-                yield return new WaitForSeconds(Time.deltaTime);
             }
+            yield return new WaitForSeconds(Time.deltaTime);
         }
 
         Debug.Log("percent : "+percent);

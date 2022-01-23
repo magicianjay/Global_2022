@@ -10,6 +10,8 @@ public class ARENA_Base : MonoBehaviour
     
     public delegate void ARENA_NewWave();
     public static event ARENA_NewWave OnNewWave;
+    
+    
 
     private void OnEnable()
     {
@@ -21,6 +23,8 @@ public class ARENA_Base : MonoBehaviour
         ARENA_Inhibitor.OnInhibitorDestroyed -= InhibitorDestroyed;
     }
 
+   
+    
     private void InhibitorDestroyed()
     {
         Debug.LogWarning("INHIBITOR DESTROYED");
